@@ -21,6 +21,30 @@ a {
   -webkit-box-align: center;
           align-items: center;
 }
+#indexPage .top {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  color: #fff;
+}
+#indexPage .top .logo {
+  width: 66px;
+  height: 66px;
+  display: block;
+  background-image: url('logo.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 46px;
+}
+#indexPage .top .dname {
+  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+}
 #indexPage #pc {
   width: 808px;
   height: 661px;
