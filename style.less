@@ -19,6 +19,7 @@ a{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	// background-size: auto 70%;
 	.top{
 		display: flex;
 		align-items: center;
@@ -107,6 +108,15 @@ a{
 		background-size: auto 70%;
 		#pc {
 			display: none;
+		}
+	}
+}
+@media (max-height: 900px) {
+	#indexPage {
+		// display: none;
+		#pc{
+			top: 140px;
+			transform: scale(0.8);
 		}
 	}
 }

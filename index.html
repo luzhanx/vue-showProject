@@ -53,6 +53,11 @@
     <script>
         function handleNameChange(el){
             var title = prompt('请输入项目名');
+
+            if(title === '' || title === null){
+                return;
+                // return alert('项目名称不能为空');
+            }
             el.innerText = title;
         }
     </script>
