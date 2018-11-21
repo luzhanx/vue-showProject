@@ -11,7 +11,7 @@
     <div id="indexPage">
         <div class="top">
             <a href="./" class="logo"></a>
-            <div class="dname">项目名称</div>
+            <div class="dname" onclick="handleNameChange(this)">项目名称</div>
             <div class="xname">WWW.XTUO.NET</div>
         </div>
         <div id="pc">
@@ -49,5 +49,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function handleNameChange(el){
+            var title = prompt('请输入项目名');
+            el.innerText = title;
+        }
+    </script>
 </body>
 </html>

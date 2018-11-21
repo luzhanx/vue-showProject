@@ -44,6 +44,7 @@ a {
   font-size: 40px;
   padding-top: 10px;
   padding-bottom: 4px;
+  cursor: pointer;
 }
 #indexPage #pc {
   width: 808px;
@@ -94,15 +95,15 @@ a {
   background: #ffcc03;
 }
 #indexPage #pc .pccom .list::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 #indexPage #pc .pccom .list::-webkit-scrollbar-track {
   background-color: #d8cee4;
-  border-radius: 2em;
+  border-radius: 3em;
 }
 #indexPage #pc .pccom .list::-webkit-scrollbar-thumb {
   background-color: #ffcc03;
-  border-radius: 2em;
+  border-radius: 3em;
 }
 @media (max-width: 800px) {
   #indexPage {
