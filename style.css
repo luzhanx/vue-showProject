@@ -39,6 +39,10 @@ a {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin-top: 46px;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
 }
 #indexPage .top .dname {
   font-size: 40px;
@@ -49,13 +53,15 @@ a {
 #indexPage #pc {
   width: 808px;
   height: 661px;
-  background-image: url('pc.png');
+  background-image: url('bg.png');
   background-repeat: no-repeat;
   position: fixed;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
   top: 240px;
 }
 #indexPage #pc .pccom {
@@ -76,9 +82,12 @@ a {
   height: 44px;
   border-radius: 8px;
   margin: 0 auto;
-  margin-bottom: 20px;
   list-style: none;
   overflow: hidden;
+  margin-bottom: 20px;
+}
+#indexPage #pc .pccom .list .item:last-child {
+  margin-bottom: 0;
 }
 #indexPage #pc .pccom .list .item a {
   height: 100%;
@@ -105,12 +114,105 @@ a {
   background-color: #ffcc03;
   border-radius: 3em;
 }
-@media (max-width: 800px) {
+#indexPage #mobile {
+  -webkit-box-flex: 1;
+          flex: 1;
+  width: 100%;
+  display: none;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+#indexPage #mobile .mcom {
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+#indexPage #mobile .mcom .lists {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  background: rgba(242, 242, 242, 0.8);
+  border-radius: 8px;
+}
+#indexPage #mobile .mcom .list {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  overflow-x: hidden;
+}
+#indexPage #mobile .mcom .list .item {
+  width: 100%;
+  height: 44px;
+  list-style: none;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#indexPage #mobile .mcom .list .item:last-child {
+  margin-bottom: 0;
+}
+#indexPage #mobile .mcom .list .item a {
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  color: #6a6a6a;
+  background: #fff;
+}
+#indexPage #mobile .mcom .list .item a:hover {
+  background: #ffcc03;
+}
+#indexPage #mobile .mcom .list::-webkit-scrollbar {
+  width: 8px;
+}
+#indexPage #mobile .mcom .list::-webkit-scrollbar-track {
+  background-color: #d8cee4;
+  border-radius: 3em;
+}
+#indexPage #mobile .mcom .list::-webkit-scrollbar-thumb {
+  background-color: #ffcc03;
+  border-radius: 3em;
+}
+/* ipad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #pc {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    top: 252px !important;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+  }
+}
+@media (max-width: 767px) {
   #indexPage {
     background-size: auto 70%;
   }
   #indexPage #pc {
     display: none;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+  }
+  #indexPage .top .logo {
+    width: 40px;
+    height: 40px;
+    margin-top: 24px;
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+    -webkit-transition: all 0.8s ease-in;
+    transition: all 0.8s ease-in;
+  }
+  #indexPage .top .dname {
+    font-size: 24px;
+  }
+  #indexPage .top .xname {
+    font-size: 12px;
+  }
+  #indexPage #mobile {
+    display: -webkit-box;
+    display: flex;
   }
 }
 @media (max-height: 900px) {
@@ -118,5 +220,7 @@ a {
     top: 140px;
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
   }
 }

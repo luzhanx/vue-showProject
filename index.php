@@ -36,7 +36,11 @@ function getShowList($files, $allow_type){
     $showList = [];
 
     foreach($files as $key=> $item){
-        $file =  iconv('gbk' , 'utf-8' , $item);
+		if(PATH_SEPARATOR==':'){
+         	 $file = $item;
+        } else {
+           $file =  iconv('gbk' , 'utf-8' , $item);
+        }
 
         if(get_file_suffix($file, $allow_type)){
             $sort = 999;
@@ -98,6 +102,7 @@ function arraySort($array, $keys, $sort='asc') {
     return $newArr;
 }
 
+// 更改项目名称POST处理
 if($_SERVER['REQUEST_METHOD'] == 'POST' )
 {
     $title = json_decode(file_get_contents('php://input'))->title;
@@ -124,7 +129,7 @@ $showList = getShowList($files, $allow_type);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -135,7 +140,7 @@ $showList = getShowList($files, $allow_type);
 <body>
 <div id="indexPage">
         <div class="top">
-            <a href="./" class="logo"></a>
+            <a href="http://www.xtuo.net/" target="_blank" class="logo"></a>
             <div class="dname" onclick="handleNameChange(this)"></div>
             <div class="xname">WWW.XTUO.NET</div>
         </div>
@@ -146,6 +151,17 @@ $showList = getShowList($files, $allow_type);
                         <li class="item"><a href="./<?=$val['href']?>" target="_blank"><?=$val['name']?></a></li>
                     <?php } ?>
                 </ul>
+            </div>
+        </div>
+        <div id="mobile">
+            <div class="mcom">
+                <div class="lists">
+                    <ul class="list">
+                        <?php foreach($showList as $val){ ?>
+                            <li class="item"><a href="./<?=$val['href']?>" target="_blank"><?=$val['name']?></a></li>
+                        <?php } ?>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

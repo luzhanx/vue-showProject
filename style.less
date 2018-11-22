@@ -33,6 +33,8 @@ a{
 			background-size: 100% 100%;
 			background-repeat: no-repeat;
 			margin-top: 46px;
+			transform: rotate(360deg);
+			transition: all 0.8s ease-in;
 		}
 		.dname{
 			font-size: 40px;
@@ -44,12 +46,13 @@ a{
 	#pc {
 		width: 808px;
 		height: 661px;
-		background-image: url('./pc.png');
+		background-image: url('./bg.png');
 		background-repeat: no-repeat;
 		position: fixed;
 		display: flex;
 		// align-items: center;
 		justify-content: center;
+		transition: all 0.4s ease-in;
 		top: 240px;
 		.pccom {
 			width: 702px;
@@ -67,9 +70,12 @@ a{
                     height: 44px;
                     border-radius: 8px;
                     margin: 0 auto;
-                    margin-bottom: 20px;
                     list-style: none;
-                    overflow: hidden;
+					overflow: hidden;
+					margin-bottom: 20px;
+					&:last-child{
+						margin-bottom: 0;
+					}
                     a{
                         height: 100%;
                         display: flex;
@@ -82,8 +88,6 @@ a{
                         }
                     }
                 }
-
-
 
 
 				&::-webkit-scrollbar {
@@ -102,12 +106,102 @@ a{
 			}
 		}
 	}
+	#mobile{
+		flex: 1;
+		width: 100%;
+		display: none;
+		transition: all 0.4s ease-in;
+		.mcom{
+			width: 100%;
+			padding: 10px;
+			overflow: hidden;
+			.lists{
+				width: 100%;
+				height: 100%;
+				padding: 20px 0;
+				background: rgba(242, 242, 242, 0.8);
+				border-radius: 8px;
+			}
+			.list{
+				width: 100%;
+				height: 100%;
+				padding: 0 20px;
+				overflow-x: hidden;
+				.item{
+					width: 100%;
+					height: 44px;
+					list-style: none;
+					margin-bottom: 20px;
+					border-radius: 8px;
+					overflow: hidden;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					a{
+						height: 100%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						color: #6a6a6a;
+						background: #fff;
+						&:hover{
+							background: @color;
+						}
+					}
+				}
+				&::-webkit-scrollbar {
+					width: 8px;
+				}
+				// 背景
+				&::-webkit-scrollbar-track {
+					background-color: #d8cee4;
+					border-radius: 3em;
+				}
+				// 滚动条
+				&::-webkit-scrollbar-thumb {
+					background-color: @color;
+					border-radius: 3em;
+				}
+			}
+		}
+	}
 }
-@media (max-width: 800px) {
+/* ipad */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait){
+	#pc{
+		transform: scale(0.9);
+		top: 252px !important;
+		transition: all 0.4s ease-in;
+	}
+}
+
+@media (max-width: 767px) {
 	#indexPage {
 		background-size: auto 70%;
 		#pc {
 			display: none;
+			transition: all 0.4s ease-in;
+		}
+		.top{
+			.logo{
+				width: 40px;
+				height: 40px;
+				margin-top: 24px;
+				transform: rotate(720deg);
+				transition: all 0.8s ease-in;
+			}
+			.dname{
+				font-size: 24px;
+			}
+			.xname{
+				font-size: 12px;
+			}
+		}
+		#mobile{
+			display: flex;
 		}
 	}
 }
@@ -117,6 +211,7 @@ a{
 		#pc{
 			top: 140px;
 			transform: scale(0.8);
+			transition: all 0.4s ease-in;
 		}
 	}
 }
